@@ -1,0 +1,56 @@
+html , body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+p, h1, h2, h3, h4, h5 , a {
+    margin: 0;
+    padding : 0;
+}
+nav{
+    background: #ff9156;
+    padding: 20px 0;
+}
+.nav{
+    width: 90%;
+    margin: auto;
+}
+.nav a.homepage{
+    text-decoration: none;
+    color: #f8f8f8;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 7px;
+    background: #ffffff33;
+    font-size: 30px;
+    margin: 0;
+}
+.nav a {
+    text-decoration: none;
+    color: #f8f8f8;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 7px;
+    background: #ffffff33;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    color: #333;
+    padding: 25px 0;
+}
+.container .google a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    background: orangered;
+    padding: 12px;
+    border-radius: 5px;
+}
+.container .google .gIcon{
+    font-weight: bold;
+    font-size: 25px;
+}
