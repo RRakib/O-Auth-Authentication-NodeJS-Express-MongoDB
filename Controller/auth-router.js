@@ -4,6 +4,9 @@ const route = express.Router();
 route.get("/login" , (req , res) => {
     res.render("Login")
 })
+route.get("/logout" , (req , res) => {
+    res.send("Log Out")
+})
 route.get("/google" , (req , res) => {
     res.send("Req Received")
 })

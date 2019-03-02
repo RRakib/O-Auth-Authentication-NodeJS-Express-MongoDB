@@ -4,7 +4,7 @@ html , body{
     overflow: hidden;
 }
 p, h1, h2, h3, h4, h5 , a {
-    margin: 0;
+    margin: 10px 0;
     padding : 0;
 }
 nav{
@@ -15,16 +15,6 @@ nav{
     width: 90%;
     margin: auto;
 }
-.nav a.homepage{
-    text-decoration: none;
-    color: #f8f8f8;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 7px;
-    background: #ffffff33;
-    font-size: 30px;
-    margin: 0;
-}
 .nav a {
     text-decoration: none;
     color: #f8f8f8;
@@ -32,8 +22,7 @@ nav{
     border-radius: 5px;
     padding: 7px;
     background: #ffffff33;
-    font-size: 18px;
-    margin: 0 5px;
+    font-size: 23px;
 }
 
 .container{
