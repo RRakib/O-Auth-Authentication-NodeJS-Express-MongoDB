@@ -1,5 +1,6 @@
 const express = require("express");
-const route = require("./Controller/auth-router")
+const route = require("./Controller/auth-router");
+const passportSetup = require("./Config/passport-setup")
 const app = express();
 
 app.use(express.urlencoded({extended : false}));
