@@ -1,6 +1,7 @@
 const passport = require("passport");
 const keys = require("./keys")
 const GoogleStrategy = require("passport-google-oauth20")
+const users = require("../Models/models")
 
 
 passport.use(
@@ -10,6 +11,12 @@ passport.use(
         clientSecret : keys.google.clientSecret
     } , (accessToken , refreshToken , profile , done) => {
             console.log("Hitting the profile");
-            console.log(profile);
+            users.find({ gid : profile.id})
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log("OPPS! " + err)
+                })
     })
 )
