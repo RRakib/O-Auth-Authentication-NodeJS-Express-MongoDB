@@ -3,8 +3,8 @@ const route = require("./Controller/auth-router");
 const passportSetup = require("./Config/passport-setup")
 const mongoose = require("mongoose");
 const keys = require("./Config/keys")
-const passport = require("passport");
 const cookieSession = require("cookie-session");
+const passport = require("passport");
 const app = express();
 
 
@@ -12,12 +12,6 @@ const app = express();
 mongoose.connect(keys.mongoDB.dbURL , {useNewUrlParser : true})
     .then(res => console.log("Connected to MongoDB"))
     .catch(err => console.log("Opps! Error!!! " + err))
-
-
-
-app.use(express.urlencoded({extended : false}));
-app.use(express.json());
-app.use("/auth/" , route)
 
 // View Engine
 app.set("view engine" , "ejs");
@@ -31,6 +25,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session())
 
+app.use("/auth/" , route)
 
 // Static File
 app.use(express.static("Public/"))

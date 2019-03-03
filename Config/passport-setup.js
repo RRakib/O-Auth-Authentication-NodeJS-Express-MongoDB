@@ -8,7 +8,7 @@ passport.serializeUser((user , done) => {
 }) 
 
 passport.deserializeUser((id , done) => {
-    users.findOne(id)
+    users.findById(id)
         .then(res => {
             done(null , res.id)
         })
