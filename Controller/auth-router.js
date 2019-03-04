@@ -12,7 +12,10 @@ route.get("/google" , passport.authenticate("google" , {
     scope: ["profile"]
 }))
 route.get("/google/redirect" , passport.authenticate("google"),(req, res) => {
-    res.render("Auth")
+    console.log(req.user)
+    res.render("Auth" , {
+        name : req.user.name
+    })
 })
 
 module.exports = route;

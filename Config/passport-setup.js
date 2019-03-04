@@ -11,7 +11,7 @@ passport.deserializeUser((id , done) => {
     users.findById(id)
         .then(res => {
             done(null , res.id)
-        })
+        })  
 })
 
 passport.use(
@@ -20,7 +20,7 @@ passport.use(
         clientID : keys.google.clientID,
         clientSecret : keys.google.clientSecret
     } , (accessToken , refreshToken , profile , done) => {
-            console.log("Hitting the profile");
+            console.log(profile.image);
             users.findOne({ gid : profile.id})
                 .then(res => {
                     if(res){
@@ -30,7 +30,8 @@ passport.use(
                     else{
                         users({
                             gid : profile.id,
-                            name: profile.displayName
+                            name: profile.displayName,
+                            // image: profile.image.url
                         })
                         .save()
                         .then(resData => {
