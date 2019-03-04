@@ -6,16 +6,13 @@ route.get("/login" , (req , res) => {
     res.render("Login")
 })
 route.get("/logout" , (req , res) => {
-    res.send("Log Out")
+    passport.session.destroy()
 })
 route.get("/google" , passport.authenticate("google" , {
     scope: ["profile"]
 }))
 route.get("/google/redirect" , passport.authenticate("google"),(req, res) => {
-    console.log(req.user)
-    res.render("Auth" , {
-        name : req.user.name
-    })
+    res.redirect("/profile")
 })
 
 module.exports = route;

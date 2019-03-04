@@ -1,5 +1,6 @@
 const express = require("express");
 const route = require("./Controller/auth-router");
+const routeProfile = require("./Controller/profile-router");
 const passportSetup = require("./Config/passport-setup")
 const mongoose = require("mongoose");
 const keys = require("./Config/keys")
@@ -26,6 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session())
 
 app.use("/auth/" , route)
+app.use("/profile" , routeProfile)
 
 // Static File
 app.use(express.static("Public/"))
