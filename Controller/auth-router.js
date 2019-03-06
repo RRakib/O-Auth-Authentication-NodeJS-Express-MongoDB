@@ -6,7 +6,8 @@ route.get("/login" , (req , res) => {
     res.render("Login")
 })
 route.get("/logout" , (req , res) => {
-    passport.session.destroy()
+    req.logout();
+    res.redirect("/")
 })
 route.get("/google" , passport.authenticate("google" , {
     scope: ["profile"]
